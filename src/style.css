@@ -11,7 +11,7 @@
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-2xl);
+  --maxWidth-wrapper: var(--maxWidth-3xl);
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -27,13 +27,12 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
+  --fontFamily-sans: 'Atkinson Hyperlegible', system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
-    Times, serif;
-  --font-body: var(--fontFamily-serif);
-  --font-heading: var(--fontFamily-sans);
+  --fontFamily-header: 'Yantramanav', sans-serif;
+  --font-body: var(--fontFamily-sans);
+  --font-heading: var(--fontFamily-header);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -55,11 +54,15 @@
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
   --color-primary: #005b99;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
+  --color-text: #1e1f16;
+  --color-text-light: #4c503e;
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-content-background: #fffeeb;
+  --color-background: #fdface;
+  --color-background-line: #f5f3b6;
+  --color-border: #2e2d19;
 }
 
 /* HTML elements */
@@ -81,6 +84,22 @@ body {
   font-family: var(--font-body);
   font-size: var(--fontSize-1);
   color: var(--color-text);
+  background-color: var(--color-background);
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-background),
+    var(--color-background) 8px,
+    var(--color-background-line) 8px,
+    var(--color-background-line) 16px
+  );
+}
+
+html, body {
+  height: 100vh;
+}
+
+html {
+  width: 100%;
 }
 
 footer {
@@ -169,12 +188,13 @@ p {
 
 ul,
 ol {
-  margin-left: var(--spacing-0);
+  margin-left: var(--spacing-6);
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
   list-style-position: outside;
   list-style-image: none;
+  list-style: square;
 }
 
 ul li,
@@ -238,52 +258,37 @@ a:focus {
   text-decoration: none;
 }
 
+figure {
+  max-width: 100%;
+  padding: 1.2rem;
+  margin: 0;
+  margin-bottom: 1.4rem;
+  border: 1px solid var(--color-border);
+  background-color: #fff;
+}
+
+figure img {
+  width: 100%;
+  image-rendering: pixelated;
+}
+
+figure figcaption {
+}
+
 /* Custom classes */
 
-.global-wrapper {
+.globalWrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-10) var(--spacing-5);
 }
 
-.global-wrapper[data-is-root-path="true"] .bio {
+.globalWrapper[data-is-root-path="true"] .bio {
   margin-bottom: var(--spacing-20);
 }
 
-.global-header {
+.globalHeader {
   margin-bottom: var(--spacing-12);
-}
-
-.main-heading {
-  font-size: var(--fontSize-7);
-  margin: 0;
-}
-
-.post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
-}
-
-.post-list-item p {
-  margin-bottom: var(--spacing-0);
-}
-
-.post-list-item h2 {
-  font-size: var(--fontSize-4);
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-2);
-  margin-top: var(--spacing-0);
-}
-
-.post-list-item header {
-  margin-bottom: var(--spacing-4);
-}
-
-.header-link-home {
-  font-weight: var(--fontWeight-bold);
-  font-family: var(--font-heading);
-  text-decoration: none;
-  font-size: var(--fontSize-2);
 }
 
 .bio {
@@ -295,28 +300,17 @@ a:focus {
   margin-bottom: var(--spacing-0);
 }
 
-.bio-avatar {
-  margin-right: var(--spacing-4);
-  margin-bottom: var(--spacing-0);
-  min-width: 50px;
-  border-radius: 100%;
-}
-
-.blog-post header h1 {
+.kata header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
 }
 
-.blog-post header p {
+.kata header p {
   font-size: var(--fontSize-2);
   font-family: var(--font-heading);
 }
 
-.blog-post-nav ul {
+.kataNav ul {
   margin: var(--spacing-0);
-}
-
-.gatsby-highlight {
-  margin-bottom: var(--spacing-8);
 }
 
 /* Media queries */

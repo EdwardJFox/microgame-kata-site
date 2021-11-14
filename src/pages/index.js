@@ -1,21 +1,21 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+import "./index.scss";
 
-  if (posts.length === 0) {
+const KataIndex = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const katas = data.allMarkdownRemark.nodes
+
+  if (katas.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
+        <Seo title="All katas" />
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
+          No katas found. Add markdown katas to "content/katas" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
           gatsby-config.js).
         </p>
@@ -25,35 +25,29 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
+      <Seo title="All katas" />
+      <p className="lead">Tiny microgame dev katas from Warioware, picked to help you practice game dev while having fun.</p>
+      <ol className="kataList">
+        {katas.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-
+          console.log("post", post);
           return (
-            <li key={post.fields.slug}>
+            <li
+              key={post.fields.slug}
+              className="kataListItem">
               <article
-                className="post-list-item"
                 itemScope
                 itemType="http://schema.org/Article"
               >
                 <header>
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
+                      <img src={post.frontmatter.thumbnail.publicURL} alt={`${title} thumbnail`} />
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <h3>{post.frontmatter.number}</h3>
                 </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
               </article>
             </li>
           )
@@ -63,7 +57,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default KataIndex
 
 export const pageQuery = graphql`
   query {
@@ -72,16 +66,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___number], order: ASC }) {
       nodes {
         excerpt
         fields {
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
           title
+          number
+          published_at(formatString: "MMMM DD, YYYY")
+          last_updated_at(formatString: "MMMM DD, YYYY")
           description
+          thumbnail {
+            publicURL
+          }
         }
       }
     }

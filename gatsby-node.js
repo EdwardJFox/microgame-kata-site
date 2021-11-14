@@ -4,10 +4,10 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  // Define a template for blog post
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  // Define a template for katasf
+  const kata = path.resolve(`./src/templates/kata.js`)
 
-  // Get all markdown blog posts sorted by date
+  // Get all markdown katas posts sorted by date
   const result = await graphql(
     `
       {
@@ -28,26 +28,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
+      `There was an error loading your katas`,
       result.errors
     )
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const katas = result.data.allMarkdownRemark.nodes
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
+  // Create katas pages
+  // But only if there's at least one markdown file found at "content/katas" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+  if (katas.length > 0) {
+    katas.forEach((post, index) => {
+      const previousPostId = index === 0 ? null : katas[index - 1].id
+      const nextPostId = index === katas.length - 1 ? null : katas[index + 1].id
 
       createPage({
         path: post.fields.slug,
-        component: blogPost,
+        component: kata,
         context: {
           id: post.id,
           previousPostId,
@@ -80,7 +80,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   // Also explicitly define the Markdown frontmatter
   // This way the "MarkdownRemark" queries will return `null` even when no
-  // blog posts are stored inside "content/blog" instead of returning an error
+  // katas posts are stored inside "content/katas" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
       author: Author
