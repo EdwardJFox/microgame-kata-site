@@ -154,6 +154,5 @@ module.exports = {
       }
     },
   ],
-  pathPrefix: `/microgame-kata-site`,
-  assetPrefix: `https://edwardjfox.github.io/microgame-kata-site/`,
+  pathPrefix: `/microgame-kata-site`
 }
