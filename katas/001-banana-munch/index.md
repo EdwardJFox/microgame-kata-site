@@ -8,7 +8,7 @@ thumbnail: ./thumb.png
 
 Starting off with the basics, giving you a base for all the other katas. Mash the button to eat the whole banana before the time runs out!
 
-### Criteria
+## Criteria
 
 - Draw a banana on the screen.
 - On a players input, advance the bananas state one more step in being eaten. Start with taking off the peel, then eating the inside.
@@ -37,3 +37,9 @@ Starting off with the basics, giving you a base for all the other katas. Mash th
 </figure>
 
 ## Submissions
+
+| Made By | Engine | Link |
+| --- | --- | --- |
+|EdwardJFox|Godot 3.4|[GitHub](https://github.com/EdwardJFox/microgame-kata-godot/tree/main/minigames/banana_munch)|
+
+[Submit your kata here](/submit)

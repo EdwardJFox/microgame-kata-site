@@ -1,6 +1,9 @@
-.kata {
+.publishedDate {
+	text-align: right;
+	@media (min-width: 36rem) {
+		float: right;
+	}
 }
-
 .winState, .loseState {
 	font-weight: 600;
 	width: 85px;
@@ -23,4 +26,20 @@
 	background: var(--color-content-background);
 	padding: 0.4rem 0.8rem;
 	text-decoration: none;
+}
+
+table {
+	border: 1px solid var(--color-border);
+	text-align: left;
+	th, td {
+		padding: 0.2rem 0.4rem;
+	}
+}
+
+ul {
+	margin-left: var(--spacing-2);
+
+	@media (min-width: 36rem) {
+		margin-left: var(--spacing-6);
+	}
 }

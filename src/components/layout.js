@@ -20,6 +20,8 @@ const Layout = ({ location, title, children }) => {
           alt="Microgame Kata Logo"
           loading="eager"
           placeholder="tracedSVG"
+          breakpoints={[]}
+          formats={["png"]}
         />  
       </Link>
     )
@@ -33,6 +35,8 @@ const Layout = ({ location, title, children }) => {
           alt="Microgame Kata Logo"
           loading="eager"
           placeholder="tracedSVG"
+          breakpoints={[]}
+          formats={["png"]}
         />  
       </Link>
     )

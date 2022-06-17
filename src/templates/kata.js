@@ -23,6 +23,7 @@ const KataTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
+          <div className="publishedDate">{post.frontmatter.published_at}</div>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
         </header>
         <section

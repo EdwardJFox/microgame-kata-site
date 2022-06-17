@@ -10,7 +10,7 @@ Fruit based Breakout themed action. Stop the watermelon from falling off the bot
 
 The player controller a paddle (in the case of the original, a persons body) left and right across the bottom of the screen. The ball (a watermelon) moves down towards the bottom of the screen at a random angle, and the player needs to move the paddle in the way to stop the ball falling off the bottom.
 
-### Criteria
+## Criteria
 
 - Add a player paddle, which they can move left and right by using whatever input method you prefer (e.g. controller, keyboard).
 - Add a ball/watermelon, which moves at a consistent speed across the screen, bouncing when it hits the walls or the player.
@@ -36,3 +36,9 @@ The player controller a paddle (in the case of the original, a persons body) lef
 </figure>
 
 ## Submissions
+
+| Made By | Engine | Link |
+| --- | --- | --- |
+|EdwardJFox|Godot 3.4|[GitHub](https://github.com/EdwardJFox/microgame-kata-godot/tree/main/minigames/body_block)|
+
+[Submit your kata here](/submit)

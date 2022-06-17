@@ -8,7 +8,7 @@ thumbnail: ./thumb.png
 
 One of the most iconic games in the Warioware series, perfectly nailing its childish tone and playful nature. A finger is moving back and forth in front of a nose. The players goal is to get the finger into the nose, by stopping it at the right moment so its finger can be thrust up directly into a nostril.
 
-### Criteria
+## Criteria
 
 - Draw a player character which moves around the nose without the characters interaction.
 - Draw a nose with two nostrils for the finger to go into.
@@ -35,3 +35,9 @@ One of the most iconic games in the Warioware series, perfectly nailing its chil
 </figure>
 
 ## Submissions
+
+| Made By | Engine | Link |
+| --- | --- | --- |
+|EdwardJFox|Godot 3.4|[GitHub](https://github.com/EdwardJFox/microgame-kata-godot/tree/main/minigames/gold_digger)|
+
+[Submit your kata here](/submit)
