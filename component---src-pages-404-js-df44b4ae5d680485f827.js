@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmicrogame_kata_site=self.webpackChunkmicrogame_kata_site||[]).push([[883],{429:function(t,e,a){a.r(e);var n=a(7294),i=a(3207),l=a(9376);e.default=function(t){var e=t.data,a=t.location,o=e.site.siteMetadata.title;return n.createElement(i.Z,{location:a,title:o},n.createElement(l.Z,{title:"404: Not Found"}),n.createElement("h1",null,"404: Not Found"),n.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-df44b4ae5d680485f827.js.map
