@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import "./index.scss";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const KataIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -23,6 +24,7 @@ const KataIndex = ({ data, location }) => {
     )
   }
 
+
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All katas" />
@@ -30,7 +32,8 @@ const KataIndex = ({ data, location }) => {
       <ol className="kataList">
         {katas.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-          console.log("post", post);
+          const thumbnail = getImage(post.frontmatter.thumbnail)
+
           return (
             <li
               key={post.fields.slug}
@@ -42,7 +45,7 @@ const KataIndex = ({ data, location }) => {
                 <header>
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
-                      <img src={post.frontmatter.thumbnail.publicURL} alt={`${title} thumbnail`} />
+                      <GatsbyImage image={thumbnail} alt={`${title} thumbnail`} />
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
@@ -79,7 +82,14 @@ export const pageQuery = graphql`
           last_updated_at(formatString: "MMMM DD, YYYY")
           description
           thumbnail {
-            publicURL
+            publicURL,
+            childImageSharp {
+              gatsbyImageData(
+                width: 240,
+                height: 160,
+                placeholder: BLURRED
+              )
+            }
           }
         }
       }

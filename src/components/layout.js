@@ -18,6 +18,8 @@ const Layout = ({ location, title, children }) => {
           src="../images/logo.png"
           width={700}
           alt="Microgame Kata Logo"
+          loading="eager"
+          placeholder="tracedSVG"
         />  
       </Link>
     )
@@ -29,6 +31,8 @@ const Layout = ({ location, title, children }) => {
           src="../images/logo_no_eyebrows.png"
           width={500}
           alt="Microgame Kata Logo"
+          loading="eager"
+          placeholder="tracedSVG"
         />  
       </Link>
     )

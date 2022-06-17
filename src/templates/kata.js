@@ -43,14 +43,14 @@ const KataTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev" class="navLink">
+              <Link to={previous.fields.slug} rel="prev" className="navLink">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next" class="navLink">
+              <Link to={next.fields.slug} rel="next" className="navLink">
                 {next.frontmatter.title} →
               </Link>
             )}

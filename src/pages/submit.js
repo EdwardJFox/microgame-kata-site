@@ -25,9 +25,9 @@ const KataSubmit = ({ location }) => {
       <form action={FORMSPARK_ACTION_URL} method="POST">
         <input type="hidden" name="_redirect" value={`${location.origin}/submitted`} />
         <input type="hidden" name="_append" value="false" />
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Name*</label>
         <input type="text" id="name" name="name" placeholder="Name" required value={name} onChange={(e) => setName(e.target.value)}/>
-        <label htmlFor="repo">Link to repo (GitHub, GitLab, BitBucket etc)</label>
+        <label htmlFor="repo">Link to repo (GitHub, GitLab, BitBucket etc)*</label>
         <input type="url" id="repo" name="repo" placeholder="git.megacorp.com" required value={repo} onChange={(e) => setRepo(e.target.value)} />
         <ReCAPTCHA
           sitekey="6LewSnggAAAAAEr06iCU81Bv0QV73aRUXQX_D3az"
@@ -38,6 +38,8 @@ const KataSubmit = ({ location }) => {
         />
         <button type="submit" disabled={submitDisabled}>Submit</button>
       </form>
+
+      <p>Form handled by Formspark.io</p>
     </Layout>
   )
 }

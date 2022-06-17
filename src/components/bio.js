@@ -36,8 +36,8 @@ const Bio = () => {
           Made by <strong>{author.name}</strong>, {author?.summary || null}
           {` `}
           <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            Find me on twitter
-          </a>
+            Twitter
+          </a> or <a href="mailto:microgamekatas@gmail.com">Email</a>
         </p>
       )}
     </div>

@@ -3,7 +3,7 @@ module.exports = {
     title: `Microgame Katas`,
     author: {
       name: `Edward Fox`,
-      summary: `Software developer and game enthusiast from Sheffield, UK.`,
+      summary: `Software developer and bad gamer from Sheffield, UK.`,
     },
     description: `A series of Katas based on the Warioware Mega Microgames game on GBA, to help you practice the basics.`,
     siteUrl: `https://microgamekatas.dev`,
