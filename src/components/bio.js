@@ -33,7 +33,7 @@ const Bio = () => {
     <div className="bio">
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong>, {author?.summary || null}
+          Made by <strong>{author.name}</strong>, {author?.summary || null}
           {` `}
           <a href={`https://twitter.com/${social?.twitter || ``}`}>
             Find me on twitter

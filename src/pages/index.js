@@ -26,7 +26,7 @@ const KataIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All katas" />
-      <p className="lead">Tiny microgame dev katas from Warioware, picked to help you practice game dev while having fun.</p>
+      <p className="lead">Tiny microgame katas from Warioware, picked to help you practice game dev while having fun. When you're ready, you can submit your finished katas <Link to="/submit">here</Link>.</p>
       <ol className="kataList">
         {katas.map(post => {
           const title = post.frontmatter.title || post.fields.slug

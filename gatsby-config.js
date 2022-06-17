@@ -6,7 +6,7 @@ module.exports = {
       summary: `Software developer and game enthusiast from Sheffield, UK.`,
     },
     description: `A series of Katas based on the Warioware Mega Microgames game on GBA, to help you practice the basics.`,
-    siteUrl: `https://microgamekatas.om`,
+    siteUrl: `https://microgamekatas.dev`,
     social: {
       twitter: `icemaz`,
     },
@@ -34,7 +34,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 700,
+              maxWidth: 800,
             },
           },
           {
@@ -155,5 +155,5 @@ module.exports = {
       }
     },
   ],
-  pathPrefix: `/microgame-kata-site`
+  pathPrefix: ``
 }

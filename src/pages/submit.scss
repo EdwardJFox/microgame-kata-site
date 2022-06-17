@@ -1,0 +1,29 @@
+form {
+  label {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  input {
+    padding: 0.4rem 0.8rem;
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .captcha {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    border: none;
+    font-size: 1.2rem;
+    background: #ffe533;
+    cursor: pointer;
+
+    &:hover {
+      background: #ffe533cc
+    }
+  }
+}

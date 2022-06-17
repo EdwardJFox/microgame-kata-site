@@ -1,4 +1,26 @@
 .kata {
+}
+
+.winState, .loseState {
+	font-weight: 600;
+	width: 85px;
+	display: inline-block;
+}
+
+.loseState {
+	color: #d70d0d;
+}
+
+.winState {
+	color: #098738;
+}
+
+.kataNav {
+	margin-top: 0.8rem;
+}
+
+.navLink {
 	background: var(--color-content-background);
-	padding: 1rem 1.6rem;
+	padding: 0.4rem 0.8rem;
+	text-decoration: none;
 }
